@@ -13,7 +13,6 @@ public class simpleStack {
         top = -1;
     }
     public void initSimpleStack(int max){
-        simpleStack simpleStack = new simpleStack(max);
         arrays = array;
         array = new Object[max];
         for (int i = 0; i <arrays.length ; i++) {
