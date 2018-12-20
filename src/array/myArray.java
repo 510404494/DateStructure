@@ -1,19 +1,19 @@
 package array;
 public class myArray {
-    private int length;
     private int phyLength;
     Object [] myArray;
 
     myArray(){
-        length = 0;
         //实际最大长度
-        phyLength = 30;
-        myArray = new Object[length];
-    }
-    myArray(int length){
         phyLength = 0;
-        this.length = length;
-        myArray = new Object[length];
+        myArray = new Object[1];
+    }
+    private void initLenght(int max){
+        Object[] initArray = new Object[max];
+        for (int i = 0; i <phyLength ; i++) {
+            initArray[i] = myArray[i];
+        }
+        myArray = initArray;
     }
     public int getLength(){
         return this.phyLength;
@@ -24,8 +24,10 @@ public class myArray {
         }
     }
     public void add(Object data){
-        myArray[phyLength]= data;
-        phyLength++;
+        if(phyLength == myArray.length){
+            initLenght(2*phyLength);
+        }
+        myArray[phyLength++]= data;
     }
     public Boolean remove(int index){
         if(index == phyLength-1){
@@ -33,11 +35,13 @@ public class myArray {
         }else{
             for (int i = index; i <phyLength-1 ; i++) {
                 myArray[i] = myArray[i+1];
-                break;
             }
             phyLength--;
         }
         myArray[phyLength] = null;
+        if(phyLength>0&&phyLength == myArray.length/2){
+            initLenght(myArray.length/2);
+        }
         return true;
     }
     public void set(int index,Object data){
@@ -48,14 +52,20 @@ public class myArray {
     }
 
     public static void main(String[] args) {
-        myArray myArray = new myArray(6);
+        myArray myArray = new myArray();
         myArray.add(10);
         myArray.add(20);
         myArray.add(30);
         myArray.add(40);
         myArray.add(50);
+        myArray.add(60);
+        myArray.add(70);
+        myArray.add(80);
         myArray.remove(3);
-        myArray.set(0,60);
+        myArray.remove(3);
+        myArray.remove(3);
+        myArray.remove(3);
+//        myArray.set(0,60);
         myArray.disPlay();
         int size = myArray.getLength();
         System.out.println(size);
