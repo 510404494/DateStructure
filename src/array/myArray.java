@@ -1,9 +1,9 @@
 package array;
 public class myArray {
     private int phyLength;
-    Object [] myArray;
+    public Object [] myArray;
 
-    myArray(){
+    public myArray(){
         //实际最大长度
         phyLength = 0;
         myArray = new Object[1];
@@ -23,7 +23,7 @@ public class myArray {
             System.out.println(myArray[i]);
         }
     }
-    public void add(Object data){
+    public void push(Object data){
         if(phyLength == myArray.length){
             initLenght(2*phyLength);
         }
@@ -53,14 +53,14 @@ public class myArray {
 
     public static void main(String[] args) {
         myArray myArray = new myArray();
-        myArray.add(10);
-        myArray.add(20);
-        myArray.add(30);
-        myArray.add(40);
-        myArray.add(50);
-        myArray.add(60);
-        myArray.add(70);
-        myArray.add(80);
+        myArray.push(10);
+        myArray.push(20);
+        myArray.push(30);
+        myArray.push(40);
+        myArray.push(50);
+        myArray.push(60);
+        myArray.push(70);
+        myArray.push(80);
         myArray.remove(3);
         myArray.remove(3);
         myArray.remove(3);
