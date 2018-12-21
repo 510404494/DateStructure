@@ -71,8 +71,8 @@ public class Sort {
             array[i] = random.nextInt(100);
         }
         //array = bubbleSort(array);
-        //array = choisSort(array);
-        array = insertSort(array);
+        array = choisSort(array);
+        //array = insertSort(array);
         System.out.println(Arrays.toString(array));
 
     }
