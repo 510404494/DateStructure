@@ -64,16 +64,39 @@ public class Sort {
         return array;
     }
 
+    public static void quickSort(int[] a){
+        int[] b =new int[a.length];
+        int index = a[0];
+        int min = 0;
+        int max = b.length-1;
+        for (int i = 0; i <a.length  ; i++) {
+            b[i] = index;
+        }
+        for (int i = 1; i <a.length ; i++) {
+            if(index>a[i]){
+                b[min] = a[i];
+                min++;
+            }else{
+                b[max] = a[i];
+                max--;
+            }
+        }
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+    }
+
     public static void main(String[] args) {
         Random random = new Random();
-        int[] array = new int[15];
-        for (int i = 0; i <15 ; i++) {
+        int[] array = new int[6];
+        for (int i = 0; i <6 ; i++) {
             array[i] = random.nextInt(100);
         }
-        //array = bubbleSort(array);
-        array = choisSort(array);
-        //array = insertSort(array);
         System.out.println(Arrays.toString(array));
+        //array = bubbleSort(array);
+        //array = choisSort(array);
+        quickSort(array);
+        //array = insertSort(array);
+
 
     }
 }
