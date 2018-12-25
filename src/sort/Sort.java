@@ -64,25 +64,23 @@ public class Sort {
         return array;
     }
 
-    public static void quickSort(int[] a){
-        int[] b =new int[a.length];
-        int index = a[0];
-        int min = 0;
-        int max = b.length-1;
-        for (int i = 0; i <a.length  ; i++) {
-            b[i] = index;
-        }
-        for (int i = 1; i <a.length ; i++) {
-            if(index>a[i]){
-                b[min] = a[i];
-                min++;
+    public static void quickSort(int[] a ,int low,int high){
+        if(low>=high){return;}
+        int[] b= a.clone();
+        int index = low;
+        int height = high;
+        for (int i = index+1; i <height+1 ; i++) {
+            if(a[index]>a[i]){
+                b[low++] = a[i];
             }else{
-                b[max] = a[i];
-                max--;
+                b[high--] = a[i];
             }
         }
+        b[low]=a[index];
+        a = b;
+        quickSort(b,index,low-1);
+        quickSort(b,low+1,a.length-1);
         System.out.println(Arrays.toString(a));
-        System.out.println(Arrays.toString(b));
     }
 
     public static void main(String[] args) {
@@ -91,11 +89,14 @@ public class Sort {
         for (int i = 0; i <6 ; i++) {
             array[i] = random.nextInt(100);
         }
-        System.out.println(Arrays.toString(array));
+        //System.out.println(Arrays.toString(array));
         //array = bubbleSort(array);
         //array = choisSort(array);
-        quickSort(array);
-        //array = insertSort(array);
+        //array = {54,62,8,23,45,87,32};
+        int[] a = {20,0,36,74,39,92};
+        quickSort(a,0,array.length-1);
+        //System.out.println(Arrays.toString(a));
+
 
 
     }
