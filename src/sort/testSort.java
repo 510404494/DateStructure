@@ -57,7 +57,6 @@ public class testSort {
             heapSort(array,size,max);
         }
     }
-
     private static void mergeSort(int[] array){
         mergeSort(array,0,array.length-1);
     }
@@ -69,7 +68,6 @@ public class testSort {
             mergeSort(array,low,midle,high);
         }
     }
-
     private static void mergeSort(int[] array,int low,int middle,int high) {
         int[] temp = new int[high-low+1];
         int i = low;
@@ -101,7 +99,6 @@ public class testSort {
         }
 
     }
-
     private static void radixSort(int[] array) {
         //取出最大值
         int max = Integer.MIN_VALUE;
@@ -137,7 +134,6 @@ public class testSort {
             }
         }
     }
-
     private static void shellSort(int[] array){
         for (int i = array.length/2; i >0; i/=2) {
             for (int j = i; j <array.length ; j++) {
