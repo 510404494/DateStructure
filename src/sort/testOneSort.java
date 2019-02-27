@@ -12,7 +12,7 @@ public class testOneSort {
         }
         System.out.println("排序前："+Arrays.toString(array));
         //shellSort(array);
-        quickSort(array);
+        //quickSort(array);
         System.out.println("排序后："+Arrays.toString(array));
     }
 
