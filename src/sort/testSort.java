@@ -6,8 +6,8 @@ import java.util.Random;
 public class testSort {
     public static void main(String[] args) {
         Random random = new Random();
-        int[] array = new int[9];
-        for (int i = 0; i <9 ; i++) {
+        int[] array = new int[10];
+        for (int i = 0; i <10 ; i++) {
             array[i] = random.nextInt(1000);
         }
         System.out.println("排序数组："+Arrays.toString(array));
@@ -24,9 +24,9 @@ public class testSort {
         //基数排序--
         //radixSort(array);
         //归并排序
-        //mergeSort(array);
+        mergeSort(array);
         //堆排序
-        heapSort(array);
+        //heapSort(array);
         System.out.println(Arrays.toString(array));
     }
 
@@ -97,7 +97,6 @@ public class testSort {
         for (int k = 0; k < temp.length; k++) {
             array[k+low]=temp[k];
         }
-
     }
     private static void radixSort(int[] array) {
         //取出最大值

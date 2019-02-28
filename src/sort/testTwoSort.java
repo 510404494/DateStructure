@@ -11,8 +11,88 @@ public class testTwoSort {
             array[i] = random.nextInt(1000);
         }
         System.out.println("排序前："+ Arrays.toString(array));
-        radixSort(array);
+        //radixSort(array);
+        //quickSort(array);
+        mergeSort(array);
+
         System.out.println("排序后："+ Arrays.toString(array));
+    }
+
+    private static void mergeSort(int[] array) {
+        mergeSort(array,0,array.length-1);
+    }
+
+    private static void mergeSort(int[] array,int low,int high){
+        int midle=(high+low)/2;
+        if(low<high){
+            mergeSort(array,low,midle);
+            mergeSort(array,midle+1,high);
+            mergeSort(array,low,midle,high);
+        }
+    }
+    private static void mergeSort(int[] array, int low, int middle, int high) {
+        int[] temp = new int[high-low+1];
+        int i = low;
+        int j = middle+1;
+        int index = 0;
+        while (i<=middle&&j<=high){
+            if(array[i]<array[j]){
+                temp[index] = array[i];
+                i++;
+            }else{
+                temp[index] = array[j];
+                j++;
+            }
+            index++;
+        }
+        while (j<=high){
+            temp[index] = array[j];
+            j++;
+            index++;
+        }
+        while (i<=middle){
+            temp[index] = array[i];
+            i++;
+            index++;
+        }
+        for (int k = 0; k <temp.length ; k++) {
+            array[k+low] = temp[k];
+        }
+        System.out.println(low+"+++"+high+":------"+Arrays.toString(array));
+    }
+
+    private static void quickSort(int[] array) {
+        quickSort(array,0,array.length-1);
+    }
+
+    /**
+     *快速排序
+     * @param array
+     * @param start
+     * @param end
+     * 第一步：在start < end 的情况下取出第一个值，定义为选定值
+     * 第二步：取出最小下标和最大下标
+     * 第三部：先比较最后一个，如果大于flag就 换掉 如果小就flag就从第一个开始比较
+     */
+    private static void quickSort(int[] array, int start, int end) {
+        if(start<end){
+            int flag = array[start];
+            int low = start;
+            int high = end;
+            while (low<high){
+                while (low<high&&array[end]>=flag){
+                    high--;
+                }
+                array[low] = array[high];
+                while (low<high&&array[low]<=flag){
+                    low++;
+                }
+                array[high]=array[low];
+                array[low] = flag;
+                quickSort(array,0,low);
+                quickSort(array,low+1,end);
+            }
+        }
     }
 
     /**
@@ -55,5 +135,10 @@ public class testTwoSort {
             }
         }
         return maxValue;
+    }
+    private static void swap(int[] array,int x,int y){
+        int temp = array[x];
+        array[x] = array[y];
+        array[y] = temp;
     }
 }
