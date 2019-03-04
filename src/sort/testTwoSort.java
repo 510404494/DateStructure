@@ -6,8 +6,8 @@ import java.util.Random;
 public class testTwoSort {
     public static void main(String[] args) {
         Random random = new Random();
-        int[] array = new int[10];
-        for (int i = 0; i <10 ; i++) {
+        int[] array = new int[5];
+        for (int i = 0; i <5 ; i++) {
             array[i] = random.nextInt(1000);
         }
         System.out.println("排序前："+ Arrays.toString(array));
@@ -58,7 +58,7 @@ public class testTwoSort {
         for (int k = 0; k <temp.length ; k++) {
             array[k+low] = temp[k];
         }
-        System.out.println(low+"+++"+high+":------"+Arrays.toString(array));
+        System.out.println(low+"+++"+high+":------middle:"+middle+Arrays.toString(array));
     }
 
     private static void quickSort(int[] array) {

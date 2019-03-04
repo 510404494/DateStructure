@@ -7,7 +7,7 @@ import java.util.Random;
 
 
 public class Sort {
-    public static int [] bubbleSort(int[] array){
+    private static int [] bubbleSort(int[] array){
         int num = 0;
         for (int i = 1; i <array.length ; i++) {
             boolean flag = true;
@@ -31,7 +31,7 @@ public class Sort {
         return array;
     }
 
-    public static int[] choisSort(int[] array){
+    private static int[] choisSort(int[] array){
         for (int i = 0; i <array.length-1 ; i++) {
             int min = i;
             for (int j = i+1; j <array.length ; j++) {
@@ -50,7 +50,7 @@ public class Sort {
         return array;
     }
 
-    public static int[] insertSort(int[] array){
+    private static int[] insertSort(int[] array){
         int j;
         for (int i = 1; i <array.length ; i++) {
             int tmp = array[i];
@@ -66,7 +66,7 @@ public class Sort {
         return array;
     }
 
-    public static void quickSort(int[] a ,int low,int high){
+    private static void quickSort(int[] a ,int low,int high){
         if(low>=high){return;}
         int[] b= a.clone();
         int index = low;

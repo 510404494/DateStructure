@@ -24,9 +24,9 @@ public class testSort {
         //基数排序--
         //radixSort(array);
         //归并排序
-        mergeSort(array);
+       // mergeSort(array);
         //堆排序
-        //heapSort(array);
+        heapSort(array);
         System.out.println(Arrays.toString(array));
     }
 
