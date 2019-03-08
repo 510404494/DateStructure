@@ -43,6 +43,7 @@ public class testSort {
         }
     }
     private static void heapSort(int[] array,int size,int index) {
+
         int leftNode = 2*index+1;
         int rightNode = 2*index+2;
         int max = index;
