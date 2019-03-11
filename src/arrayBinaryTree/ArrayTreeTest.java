@@ -12,11 +12,6 @@ public class ArrayTreeTest {
         }
         System.out.println(Arrays.toString(data));
         ArrayBinaryTree arrayBinaryTree = new ArrayBinaryTree(data);
-        arrayBinaryTree.frontShow();
-        System.out.println("========================");
-        int start =(data.length-1)/2;
-        System.out.println("start:"+start);
-        System.out.println("data.length:"+data.length);
         arrayBinaryTree.creatMaxHeap(data);
         System.out.println(Arrays.toString(data));
     }
