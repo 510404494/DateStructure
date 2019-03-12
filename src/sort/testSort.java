@@ -17,16 +17,17 @@ public class testSort {
         //selectSort(array);
         //插入排序
         //insertSort(array);
-        //快速排序--
-        //quickSort(array,0,array.length-1);
         //希尔排序--
         //shellSort(array);
         //基数排序--
         //radixSort(array);
+        //快速排序--
+        //quickSort(array,0,array.length-1);
         //归并排序
        // mergeSort(array);
         //堆排序
-        heapSort(array);
+       // heapSort(array);
+
         System.out.println(Arrays.toString(array));
     }
 

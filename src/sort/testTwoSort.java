@@ -21,7 +21,6 @@ public class testTwoSort {
     private static void mergeSort(int[] array) {
         mergeSort(array,0,array.length-1);
     }
-
     private static void mergeSort(int[] array,int low,int high){
         int midle=(high+low)/2;
         if(low<high){
